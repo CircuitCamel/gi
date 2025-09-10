@@ -1,7 +1,9 @@
 package server
 
 import (
+	"fmt"
 	"gitignore/internal/gi"
+	"log"
 	"net/http"
 	"time"
 
@@ -16,5 +18,6 @@ func Start() {
 
 	mux.HandleFunc("/{catchall:.*}", gi.Generate).Methods("GET")
 
-	http.ListenAndServe(":8080", mux)
+	fmt.Printf("Server running on port: 8080")
+	log.Fatal(http.ListenAndServe(":8080", mux))
 }
