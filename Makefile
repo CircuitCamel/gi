@@ -7,5 +7,8 @@ run:
 clean:
 	@rm ./bin/gitIgnore && rm -d ./bin/
 
-full: build
+update:
+	git pull
+
+full: update build
 	@./bin/gitIgnore
