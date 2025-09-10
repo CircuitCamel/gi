@@ -1,7 +1,10 @@
 package main
 
-import "gitignore/internal/server"
+import (
+	"gitignore/internal/server"
+	"gitignore/internal/utils"
+)
 
 func main() {
-	server.Start()
+	server.Start(utils.LoadConfig())
 }
