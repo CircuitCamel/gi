@@ -1,10 +1,25 @@
 # GI
 
-- this is just another gitignore template maker
-- it currently only works with a curl to the root path giving my default gitignore I use in any new project I make
-- I made this because I wanted to
+A simple HTTP service that generates .gitignore files.
 
-### you can try it out with this command
-```sh
-curl -sL gi.caml.cc > .gitignore
+## Usage
+
+```bash
+# get default .gitignore
+curl gi.caml.cc > .gitignore
+
+# list available templates  
+curl gi.caml.cc/list
+
+# get specific template
+curl gi.caml.cc/go > .gitignore
+
+# combine templates
+curl gi.caml.cc/go,macos > .gitignore
+```
+
+## Development
+
+```bash
+make full
 ```
